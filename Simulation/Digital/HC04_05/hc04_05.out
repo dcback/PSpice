@@ -1,0 +1,238 @@
+
+**** 03/09/19 18:10:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\USER\Desktop\Sim\Digital\HC04_05-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "ss.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\Users\USER\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 6m 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source HC04_05
+X_U1A         IN 04 $G_DPWR $G_DGND 74HC04 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U2A         IN 05 $G_DPWR $G_DGND 74HC05 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND IN IO_STM IO_LEVEL=0 
++ 0 0
++ +1mS 1
++REPEAT FOREVER
++ +1mS 0
++  +1mS 1
++ ENDREPEAT
+R_R1         0 04  10k TC=0,0 
+R_R2         05 VCC  10k TC=0,0 
+V_V1         VCC 0 5Vdc
+
+**** RESUMING ss.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node 04
+*
+* Moving X_U1A.U1:OUT1 from analog node 04 to new digital node 04$DtoA
+X$04_DtoA1
++ 04$DtoA
++ 04
++ $G_DPWR
++ $G_DGND
++ DtoA_HC
++       PARAMS: DRVH=  87     DRVL=  87     CAPACITANCE=   0     
+*
+* Analog/Digital interface for node 05
+*
+* Moving X_U2A.U1:OUT1 from analog node 05 to new digital node 05$DtoA
+X$05_DtoA1
++ 05$DtoA
++ 05
++ $G_DPWR
++ $G_DGND
++ DtoA_HC_OC
++       PARAMS: DRVH=   1.0000E+06 DRVL=  87     CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 03/09/19 18:10:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\USER\Desktop\Sim\Digital\HC04_05-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74HC         DIN74HC_OC      
+      S0NAME 0               0               
+       S0TSW    5.000000E-09    5.000000E-09 
+       S0RLO    1               1            
+       S0RHI  100.000000E+03  100.000000E+03 
+      S1NAME 1               1               
+       S1TSW    5.000000E-09    5.000000E-09 
+       S1RLO  100.000000E+03  200.000000E+03 
+       S1RHI    1             200.000000E+03 
+      S2NAME X               X               
+       S2TSW    5.000000E-09    5.000000E-09 
+       S2RLO  110             110            
+       S2RHI  100             100            
+      S3NAME R               R               
+       S3TSW    5.000000E-09    5.000000E-09 
+       S3RLO  110             110            
+       S3RHI  100             100            
+      S4NAME F               F               
+       S4TSW    5.000000E-09    5.000000E-09 
+       S4RLO  110             110            
+       S4RHI  100             100            
+      S5NAME Z               Z               
+       S5TSW    5.000000E-09    5.000000E-09 
+       S5RLO  200.000000E+03  200.000000E+03 
+       S5RHI  200.000000E+03  200.000000E+03 
+
+
+**** 03/09/19 18:10:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\USER\Desktop\Sim\Digital\HC04_05-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_H04C          D_HC05          
+      TPLHMN    3.600000E-09    5.200000E-09 
+      TPLHTY    9.000000E-09   13.000000E-09 
+      TPLHMX   24.000000E-09   29.000000E-09 
+      TPHLMN    3.600000E-09    3.600000E-09 
+      TPHLTY    9.000000E-09    9.000000E-09 
+      TPHLMX   24.000000E-09   21.000000E-09 
+
+
+**** 03/09/19 18:10:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\USER\Desktop\Sim\Digital\HC04_05-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_HC           IO_HC_OC        IO_HC_DTOA      
+        INLD                    3.500000E-12    3.500000E-12                 
+        DRVL    0              87              87                            
+        DRVH    0              87               1.000000E+06                 
+       AtoD1                 AtoD_HC         AtoD_HC                         
+       AtoD2                 AtoD_HC_NX      AtoD_HC_NX                      
+       AtoD3                 AtoD_HC         AtoD_HC                         
+       AtoD4                 AtoD_HC_NX      AtoD_HC_NX                      
+       DtoA1 DtoA_STM        DtoA_HC         DtoA_HC_OC                      
+       DtoA2 DtoA_STM        DtoA_HC         DtoA_HC_OC                      
+       DtoA3 DtoA_STM        DtoA_HC_E       DtoA_HC_OC_E                    
+       DtoA4 DtoA_STM        DtoA_HC_E       DtoA_HC_OC_E                    
+      TSWHL1                    2.742000E-09    2.811000E-09                 
+      TSWHL2                    2.742000E-09    2.811000E-09                 
+      TSWHL3                    2.751000E-09    2.805000E-09                 
+      TSWHL4                    2.751000E-09    2.805000E-09                 
+      TSWLH1                    2.758000E-09    4.582000E-09                 
+      TSWLH2                    2.758000E-09    4.582000E-09                 
+      TSWLH3                    2.763000E-09    4.589000E-09                 
+      TSWLH4                    2.763000E-09    4.589000E-09                 
+       TPWRT  100.000000E+03    2.000000E-09    2.000000E-09  100.000000E+03 
+
+
+**** 03/09/19 18:10:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\USER\Desktop\Sim\Digital\HC04_05-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   04)    4.9721  (   05)    4.7727  (  VCC)    5.0000  ($G_DGND)    0.0000    
+
+($G_DPWR)    5.0000                   (X$04_DtoA1.DGND_OL)     .0022            
+
+(X$04_DtoA1.DPWR_OH)    4.9727        (X$05_DtoA1.DGND_OL)     .0010        
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+( 05$DtoA) : Z     (      IN) : 0     ( 04$DtoA) : 1     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.273E-05
+    X$DIGIFPWR.VDPWR  -5.531E-04
+    X$DIGIFPWR.VDGND  -4.795E-04
+
+    TOTAL POWER DISSIPATION   2.88E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/09/19 18:10:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ss"  [ C:\Users\USER\Desktop\Sim\Digital\HC04_05-PSpiceFiles\SCHEMATIC1\ss.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .06
+
