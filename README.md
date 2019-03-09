@@ -4,13 +4,14 @@
 * Simulation
   * Basic		  
     * Passive  
-      * 2r_divider
+      * 2R_Divider
     * Active
       * Diode
       * Transistor
       * Mosfet
       * OPAMP
   * Digital
+   * HC04_05
   * Mixed
   * Power
   * Advanced
