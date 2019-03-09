@@ -11,7 +11,7 @@
       * Mosfet
       * OPAMP
   * Digital
-   * HC04_05
+    * HC04_05
   * Mixed
   * Power
   * Advanced
